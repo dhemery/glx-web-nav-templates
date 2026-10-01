@@ -1,0 +1,67 @@
+{{- define "title" -}}{{.}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr>
+            <th>Title</th>
+            <td>{{.Title}}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{.Type}}</td>
+        </tr>
+        {{- range .Authors -}}
+            <tr>
+                <th>Author</th>
+                <td>{{.}}</td>
+            </tr>
+        {{- end -}}
+        <tr>
+            <th>Date</th>
+            <td>{{.Date}}</td>
+        </tr>
+        <tr>
+            <th>Repository</th>
+            <td>{{- with .Repository -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+        <tr>
+            <th>Language</th>
+            <td>{{.Language}}</td>
+        </tr>
+    </table>
+
+    {{- template "properties" . -}}
+
+    {{- if or .Assertions .Citations .ReferencingMedia -}}
+    <h2>Referenced By</h2>
+        {{- with .Assertions -}}
+        <h3>Assertions</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Citations -}}
+        <h3>Citations</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .ReferencingMedia -}}
+        <h3>Media</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}

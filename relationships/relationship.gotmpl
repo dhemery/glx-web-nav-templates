@@ -1,0 +1,40 @@
+{{- define "title" -}}{{.}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <td>{{.Type}}</td>
+        </tr>
+        {{- range .Participants -}}
+        <tr>
+            <th>{{.Role}}</th>
+            <td><a href='/{{.Person.Slug}}'>{{.Person}}</a></td>
+        </tr>
+        {{- end -}}
+        <tr>
+            <th>Start Event</th>
+            <td>{{- with .StartEvent -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+        <tr>
+            <th>End Event</th>
+            <td>{{- with .EndEvent -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+    </table>
+
+    {{- template "properties" . -}}
+
+    {{- with .Assertions }}
+    <h2>Referenced By</h2>
+    <h3>Assertions</h3>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}
+

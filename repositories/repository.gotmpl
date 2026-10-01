@@ -1,0 +1,62 @@
+{{- define "title" -}}{{.}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{.Name}}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{.Type}}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{.Address}}</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>{{.City}}</td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td>{{.State}}</td>
+        </tr>
+        <tr>
+            <th>Postal Code</th>
+            <td>{{.PostalCode}}</td>
+        </tr>
+        <tr>
+            <th>Website</th>
+            <td>{{- with .Website -}}<a href='{{.}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+    </table>
+
+    {{- template "properties" . -}}
+
+    {{- if or .Citations .Sources -}}
+    <h2>Referenced By</h2>
+        {{- with .Citations -}}
+        <h3>Citations</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Sources -}}
+        <h3>Sources</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}
+

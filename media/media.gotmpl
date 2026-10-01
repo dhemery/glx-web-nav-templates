@@ -1,0 +1,51 @@
+{{- define "title" -}}{{.Title}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr><th>Title</th><td>{{.Title}}</td></tr>
+        <tr><th>Type</th><td>{{.Type}}</td></tr>
+        <tr><th>URI</th><td>{{.Date}}</td></tr>
+        <tr><th>Mime Type</th><td>{{.MimeType}}</td></tr>
+        <tr><th>Hash</th><td>{{.Hash}}</td></tr>
+        <tr><th>Date</th><td>{{.Date}}</td></tr>
+        <tr><th>Source</th><td>{{- with .Source -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td></tr>
+    </table>
+
+    {{- template "properties" . -}}
+
+    {{- if or .Assertions .Citations .ReferencingSources -}}
+        <h2>Cited By</h2>
+
+        {{- with .Assertions -}}
+        <h3>Assertions</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Citations -}}
+        <h3>Citations</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .ReferencingSources -}}
+        <h3>Sources</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+    {{- end -}}
+
+
+
+    {{- template "notes" . -}}
+{{- end -}}

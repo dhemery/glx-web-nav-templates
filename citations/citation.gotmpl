@@ -1,0 +1,38 @@
+{{- define "title" -}}{{.}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr>
+            <th>Source:</th>
+            <td>{{- with .Source -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+        <tr>
+            <th>Repository:</th>
+            <td>{{- with .Repository -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+        </tr>
+    </table>
+
+    {{- with .Media -}}
+    <h2>Media</h2>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- template "properties" . -}}
+
+    {{- with .Assertions -}}
+    <h2>Referenced By</h2>
+    <h3>Assertions</h3>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}

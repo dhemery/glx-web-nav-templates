@@ -1,0 +1,81 @@
+{{- define "title" -}}{{.}}{{- end -}}
+
+{{- define "properties" -}}<!-- no properties -->{{- end -}}
+
+{{- define "content" -}}
+    <h2>Conclusion</h2>
+    <table>
+        {{- with .Subject -}}
+        <tr>
+            <th>Subject</th>
+            <td><a href='/{{.Slug}}'>{{.}}</a></td>
+        </tr>
+        {{- end -}}
+
+        {{- with .Property -}}
+        <tr>
+            <th>Property</th>
+            <td>{{.}}{{if $.Date.Valid}} ({{$.Date}}){{- end -}}</td>
+        </tr>
+        {{- end -}}
+
+        {{- with .Participant -}}
+        <tr>
+            <th>{{.Role}}</th>
+            <td><a href='/{{.Person.Slug}}'>{{.Person}}</a></td>
+        </tr>
+        {{- end -}}
+
+        {{- with .Value -}}
+        <tr>
+            <th>Value</th>
+            <td>{{.}}</td>
+        </tr>
+        {{- end -}}
+
+        {{- with .Confidence -}}
+        <tr>
+            <th>Confidence</th>
+            <td>{{.}}</td>
+        </tr>
+        {{- end -}}
+
+        {{- with .Status -}}
+        <tr>
+            <th>Status</th>
+            <td>{{.}}</td>
+        </tr>
+        {{- end -}}
+    </table>
+
+    <h2>Evidence</h2>
+
+    {{- with .Citations -}}
+    <h3>Citations</h3>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- with .Sources -}}
+    <h3>Sources</h3>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- with .Media -}}
+    <h3>Media</h3>
+    <ul>
+        {{- range . -}}
+        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}

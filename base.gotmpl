@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8' />
+    <meta viewport='width=device-width' />
+    <meta viewport='initial-scale=1' />
+    <meta viewport='user-scalable=yes' />
+    <link href='/favicon.ico' rel='icon' />
+
+    <title>{{template "title" .Content}}</title>
+</head>
+
+<body>
+    <header>
+        <a class='title' href='/'>GLX Web Archive Navigator</a>
+        <nav>
+            <a href="/assertions">Assertions</a>
+            | <a href="/citations">Citations</a>
+            | <a href="/events">Events</a>
+            | <a href="/media">Media</a>
+            | <a href="/persons">People</a>
+            | <a href="/places">Places</a>
+            | <a href="/relationships">Relationships</a>
+            | <a href="/repositories">Repositories</a>
+            | <a href="/sources">Sources</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>{{template "title" .Content}}</h1>
+        {{template "content" .Content}}
+    </main>
+
+    <footer>
+        <p>Rendered by glx-web</p>
+    </footer>
+</body>
+
+</html>
+
+
+{{- define "properties" -}}
+    {{- with .Properties -}}
+    <h2>Properties</h2>
+    <table>
+        {{- range $name, $prop := . -}}
+            {{- $label := $prop.Definition.Label -}}
+            {{- range $prop.Values -}}
+            <tr>
+                <th>{{$label}}{{if .Date.Valid}} ({{.Date}}){{end}}<th>
+                <td>{{.}}<td>
+            </tr>
+            {{- end -}}
+        {{- end -}}
+    </table>
+    {{- end -}}
+{{- end -}}
+
+
+{{- define "notes" -}}
+    {{- with .Notes -}}
+    <h2>Notes</h2>
+    <ol>
+        {{- range $i, $note := . -}}
+        <li>{{$note}}</li>
+        {{- end -}}
+    </ol>
+    {{- end -}}
+{{- end -}}

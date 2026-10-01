@@ -1,0 +1,63 @@
+{{- define "title" -}}{{.FullName}}{{- end -}}
+
+{{- define "content" -}}
+    <h2>Fields</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>{{.Name}}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{.Type}}</td>
+        </tr>
+        <tr>
+            <th>Parent</th>
+            <td>{{- with .Parent -}}<a href='/{{.Slug}}'>{{.FullName}}</a>{{- end -}}</td>
+        </tr>
+        <tr>
+            <th>Latitude</th>
+            <td>{{- with .Latitude -}}{{.}}{{- end -}}</td>
+        </tr>
+        <tr>
+            <th>Longitude</th>
+            <td>{{- with .Longitude -}}{{.}}{{- end -}}</td>
+        </tr>
+    </table>
+
+    {{- template "properties" . -}}
+
+    {{- if or .Assertions .ChildPlaces .Events .Assertions -}}
+        <h2>Referenced By</h2>
+
+        {{- with .Assertions -}}
+        <h3>Assertions</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Events -}}
+        <h3>Events</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .ChildPlaces -}}
+        <h3>Places</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}

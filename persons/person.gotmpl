@@ -1,0 +1,39 @@
+{{- define "title" -}}{{.DisplayName}}{{- end -}}
+
+{{- define "content" -}}
+    {{- template "properties" . -}}
+
+    {{- if or .Assertions .Events .Relationships -}}
+    <h2>Referenced By</h2>
+        {{- with .Assertions -}}
+        <h3>Assertions</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Events -}}
+        <h3>Events</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+        {{- with .Relationships -}}
+        <h3>Relationships</h3>
+        <ul>
+            {{- range . -}}
+            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            {{- end -}}
+        </ul>
+        {{- end -}}
+
+    {{- end -}}
+
+    {{- template "notes" . -}}
+{{- end -}}
+
