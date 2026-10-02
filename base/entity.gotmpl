@@ -1,0 +1,36 @@
+{{- define "title" -}}
+    {{.Entity}}
+{{- end -}}
+
+{{- define "content" -}}
+    {{- template "entity" .Entity -}}
+{{- end -}}
+
+{{- define "properties" -}}
+    {{- with .Properties -}}
+    <h2>Properties</h2>
+    <table>
+        {{- range $name, $prop := . -}}
+            {{- $label := $prop.Definition.Label -}}
+            {{- range $prop.Values -}}
+            <tr>
+                <th>{{$label}}{{if .Date.Valid}} ({{.Date}}){{end}}<th>
+                <td>{{.}}<td>
+            </tr>
+            {{- end -}}
+        {{- end -}}
+    </table>
+    {{- end -}}
+{{- end -}}
+
+
+{{- define "notes" -}}
+    {{- with .Notes -}}
+    <h2>Notes</h2>
+    <ol>
+        {{- range $i, $note := . -}}
+        <li>{{$note}}</li>
+        {{- end -}}
+    </ol>
+    {{- end -}}
+{{- end -}}

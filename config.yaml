@@ -1,11 +1,15 @@
 bases:
     root:
         patterns:
-            - root.gotmpl
+            - base/root.gotmpl
     list:
         base: root
         patterns:
-            - list.gotmpl
+            - base/list.gotmpl
+    entity:
+        base: root
+        patterns:
+            - base/entity.gotmpl
 indexes:
     index:
         base: root
@@ -14,15 +18,15 @@ indexes:
 entities:
     assertions:
         entity:
-            base: root
+            base: entity
             patterns:
-                - associations/association.gotmpl
+                - assertions/assertion.gotmpl
         indexes:
             index:
                 base: list
     citations:
         entity:
-            base: root
+            base: entity
             patterns:
                 - citations/citation.gotmpl
         indexes:
@@ -30,7 +34,7 @@ entities:
                 base: list
     events:
         entity:
-            base: root
+            base: entity
             patterns:
                 - events/event.gotmpl
         indexes:
@@ -38,7 +42,7 @@ entities:
                 base: list
     media:
         entity:
-            base: root
+            base: entity
             patterns:
                 - media/media.gotmpl
         indexes:
@@ -46,7 +50,7 @@ entities:
                 base: list
     persons:
         entity:
-            base: root
+            base: entity
             patterns:
                 - persons/person.gotmpl
         indexes:
@@ -54,7 +58,7 @@ entities:
                 base: list
     places:
         entity:
-            base: root
+            base: entity
             patterns:
                 - places/place.gotmpl
         indexes:
@@ -62,7 +66,7 @@ entities:
                 base: list
     relationships:
         entity:
-            base: root
+            base: entity
             patterns:
                 - relationships/relationship.gotmpl
         indexes:
@@ -70,7 +74,7 @@ entities:
                 base: list
     repositories:
         entity:
-            base: root
+            base: entity
             patterns:
                 - repositories/repository.gotmpl
         indexes:
@@ -78,7 +82,7 @@ entities:
                 base: list
     sources:
         entity:
-            base: root
+            base: entity
             patterns:
                 - sources/source.gotmpl
         indexes:

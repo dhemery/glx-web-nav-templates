@@ -1,6 +1,4 @@
-{{- define "title" -}}{{.DisplayName}}{{- end -}}
-
-{{- define "content" -}}
+{{- define "entity" -}}
     {{- template "properties" . -}}
 
     {{- if or .Assertions .Events .Relationships -}}
