@@ -1,0 +1,9 @@
+{{- define "title" -}}All {{.EntityType}}{{- end -}}
+
+{{- define "content" -}}
+<ul>
+    {{- range .Entities -}}
+    <li><a href="/{{.Slug}}">{{.}}</a></li>
+    {{- end -}}
+<ul>
+{{- end -}}

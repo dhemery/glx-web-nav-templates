@@ -8,7 +8,7 @@
     <meta viewport='user-scalable=yes' />
     <link href='/favicon.ico' rel='icon' />
 
-    <title>{{template "title" .Content}}</title>
+    <title>{{template "title" .}}</title>
 </head>
 
 <body>
@@ -28,8 +28,8 @@
     </header>
 
     <main>
-        <h1>{{template "title" .Content}}</h1>
-        {{template "content" .Content}}
+        <h1>{{template "title" .}}</h1>
+        {{template "content" .}}
     </main>
 
     <footer>

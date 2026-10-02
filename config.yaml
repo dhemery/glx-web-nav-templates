@@ -1,18 +1,18 @@
 bases:
     root:
         patterns:
-            - base/root.gotmpl
+            - root.gotmpl
     list:
         base: root
         patterns:
-            - base/list.gotmpl
+            - list.gotmpl
 indexes:
     index:
-        root: root
+        base: root
         patterns:
             - index.gotmpl
 entities:
-    associations:
+    assertions:
         entity:
             base: root
             patterns:
