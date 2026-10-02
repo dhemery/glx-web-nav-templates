@@ -1,0 +1,86 @@
+bases:
+    root:
+        patterns:
+            - base/root.gotmpl
+    list:
+        base: root
+        patterns:
+            - base/list.gotmpl
+indexes:
+    index:
+        root: root
+        patterns:
+            - index.gotmpl
+entities:
+    associations:
+        entity:
+            base: root
+            patterns:
+                - associations/association.gotmpl
+        indexes:
+            index:
+                base: list
+    citations:
+        entity:
+            base: root
+            patterns:
+                - citations/citation.gotmpl
+        indexes:
+            index:
+                base: list
+    events:
+        entity:
+            base: root
+            patterns:
+                - events/event.gotmpl
+        indexes:
+            index:
+                base: list
+    media:
+        entity:
+            base: root
+            patterns:
+                - media/media.gotmpl
+        indexes:
+            index:
+                base: list
+    persons:
+        entity:
+            base: root
+            patterns:
+                - persons/person.gotmpl
+        indexes:
+            index:
+                base: list
+    places:
+        entity:
+            base: root
+            patterns:
+                - places/place.gotmpl
+        indexes:
+            index:
+                base: list
+    relationships:
+        entity:
+            base: root
+            patterns:
+                - relationships/relationship.gotmpl
+        indexes:
+            index:
+                base: list
+    repositories:
+        entity:
+            base: root
+            patterns:
+                - repositories/repository.gotmpl
+        indexes:
+            index:
+                base: list
+    sources:
+        entity:
+            base: root
+            patterns:
+                - sources/source.gotmpl
+        indexes:
+            index:
+                base: list
