@@ -9,17 +9,23 @@
 {{- define "properties" -}}
     {{- with .Properties -}}
     <h2>Properties</h2>
-    <table>
+    <ul>
         {{- range $name, $prop := . -}}
             {{- $label := $prop.Definition.Label -}}
             {{- range $prop.Values -}}
-            <tr>
-                <th>{{$label}}{{if .Date.Valid}} ({{.Date}}){{end}}<th>
-                <td>{{.}}<td>
-            </tr>
+            <li>
+                <strong>{{$label}}{{if .Date.Valid}} ({{.Date}}){{end}}:</strong> {{.}}
+                {{- with .Fields -}}
+                <ul>
+                    {{- range . -}}
+                    <li><strong>{{.Definition.Label}}:</strong> {{.}}</li>
+                    {{- end -}}
+                </ul>
+                {{- end -}}
+            </li>
             {{- end -}}
         {{- end -}}
-    </table>
+    </ul>
     {{- end -}}
 {{- end -}}
 
