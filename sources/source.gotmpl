@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <th>Repository</th>
-            <td>{{- with .Repository -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+            <td>{{- with .Repository -}}<a href='/{{.PagePath}}'>{{.}}</a>{{- end -}}</td>
         </tr>
         <tr>
             <th>Language</th>
@@ -37,7 +37,7 @@
         <h3>Assertions</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -46,7 +46,7 @@
         <h3>Citations</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -55,7 +55,7 @@
         <h3>Media</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}

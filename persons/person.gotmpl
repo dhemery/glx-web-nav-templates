@@ -7,7 +7,7 @@
         <h3>Assertions</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -16,7 +16,7 @@
         <h3>Events</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -25,7 +25,7 @@
         <h3>Relationships</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}

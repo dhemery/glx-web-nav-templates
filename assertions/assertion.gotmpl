@@ -4,7 +4,7 @@
         {{- with .Subject -}}
         <tr>
             <th>Subject</th>
-            <td><a href='/{{.Slug}}'>{{.}}</a></td>
+            <td><a href='/{{.PagePath}}'>{{.}}</a></td>
         </tr>
         {{- end -}}
 
@@ -18,7 +18,7 @@
         {{- with .Participant -}}
         <tr>
             <th>{{.Role}}</th>
-            <td><a href='/{{.Person.Slug}}'>{{.Person}}</a></td>
+            <td><a href='/{{.Person.PagePath}}'>{{.Person}}</a></td>
         </tr>
         {{- end -}}
 
@@ -50,7 +50,7 @@
     <h3>Citations</h3>
     <ul>
         {{- range . -}}
-        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
     {{- end -}}
@@ -59,7 +59,7 @@
     <h3>Sources</h3>
     <ul>
         {{- range . -}}
-        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
     {{- end -}}
@@ -68,7 +68,7 @@
     <h3>Media</h3>
     <ul>
         {{- range . -}}
-        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
     {{- end -}}

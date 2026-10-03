@@ -7,7 +7,7 @@
         <tr><th>Mime Type</th><td>{{.MimeType}}</td></tr>
         <tr><th>Hash</th><td>{{.Hash}}</td></tr>
         <tr><th>Date</th><td>{{.Date}}</td></tr>
-        <tr><th>Source</th><td>{{- with .Source -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td></tr>
+        <tr><th>Source</th><td>{{- with .Source -}}<a href='/{{.PagePath}}'>{{.}}</a>{{- end -}}</td></tr>
     </table>
 
     {{- template "properties" . -}}
@@ -19,7 +19,7 @@
         <h3>Assertions</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -28,7 +28,7 @@
         <h3>Citations</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -37,7 +37,7 @@
         <h3>Sources</h3>
         <ul>
             {{- range . -}}
-            <li><a href='/{{.Slug}}'>{{.}}</a></li>
+            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}

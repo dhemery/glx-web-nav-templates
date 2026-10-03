@@ -8,16 +8,16 @@
         {{- range .Participants -}}
         <tr>
             <th>{{.Role}}</th>
-            <td><a href='/{{.Person.Slug}}'>{{.Person}}</a></td>
+            <td><a href='/{{.Person.PagePath}}'>{{.Person}}</a></td>
         </tr>
         {{- end -}}
         <tr>
             <th>Start Event</th>
-            <td>{{- with .StartEvent -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+            <td>{{- with .StartEvent -}}<a href='/{{.PagePath}}'>{{.}}</a>{{- end -}}</td>
         </tr>
         <tr>
             <th>End Event</th>
-            <td>{{- with .EndEvent -}}<a href='/{{.Slug}}'>{{.}}</a>{{- end -}}</td>
+            <td>{{- with .EndEvent -}}<a href='/{{.PagePath}}'>{{.}}</a>{{- end -}}</td>
         </tr>
     </table>
 
@@ -28,7 +28,7 @@
     <h3>Assertions</h3>
     <ul>
         {{- range . -}}
-        <li><a href='/{{.Slug}}'>{{.}}</a></li>
+        <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
     {{- end -}}
