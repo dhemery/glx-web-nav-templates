@@ -2,7 +2,7 @@
 
 {{- define "content" -}}
 <ul>
-    {{- range .Entities -}}
+    {{- range .Entities.Sort -}}
     <li><a href="/{{.PagePath}}">{{.}}</a></li>
     {{- end -}}
 <ul>

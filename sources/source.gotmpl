@@ -36,7 +36,7 @@
         {{- with .Assertions -}}
         <h3>Assertions</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
@@ -45,7 +45,7 @@
         {{- with .Citations -}}
         <h3>Citations</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
@@ -54,7 +54,7 @@
         {{- with .ReferencingMedia -}}
         <h3>Media</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>

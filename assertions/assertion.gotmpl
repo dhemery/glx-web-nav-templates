@@ -49,7 +49,7 @@
     {{- with .Citations -}}
     <h3>Citations</h3>
     <ul>
-        {{- range . -}}
+        {{- range .Sort -}}
         <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
@@ -58,7 +58,7 @@
     {{- with .Sources -}}
     <h3>Sources</h3>
     <ul>
-        {{- range . -}}
+        {{- range .Sort -}}
         <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
@@ -67,7 +67,7 @@
     {{- with .Media -}}
     <h3>Media</h3>
     <ul>
-        {{- range . -}}
+        {{- range .Sort -}}
         <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>

@@ -6,7 +6,7 @@
         {{- with .Assertions -}}
         <h3>Assertions</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
@@ -15,7 +15,7 @@
         {{- with .Events -}}
         <h3>Events</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
@@ -24,7 +24,7 @@
         {{- with .Relationships -}}
         <h3>Relationships</h3>
         <ul>
-            {{- range . -}}
+            {{- range .Sort -}}
             <li><a href='/{{.PagePath}}'>{{.}}</a></li>
             {{- end -}}
         </ul>

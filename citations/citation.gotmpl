@@ -14,7 +14,7 @@
     {{- with .Media -}}
     <h2>Media</h2>
     <ul>
-        {{- range . -}}
+        {{- range .Sort -}}
         <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
@@ -26,7 +26,7 @@
     <h2>Referenced By</h2>
     <h3>Assertions</h3>
     <ul>
-        {{- range . -}}
+        {{- range .Sort -}}
         <li><a href='/{{.PagePath}}'>{{.}}</a></li>
         {{- end -}}
     </ul>
