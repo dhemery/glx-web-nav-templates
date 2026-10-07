@@ -55,7 +55,9 @@ entities:
                 - persons/person.gotmpl
         pages:
             index:
-                base: list
+                base: root
+                patterns:
+                    - persons/index.gotmpl
     places:
         entity:
             base: entity

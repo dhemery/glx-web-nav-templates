@@ -1,0 +1,13 @@
+{{- define "title" -}}All Persons{{- end -}}
+
+{{- define "content" -}}
+    {{- $personsBySurname := .Entities.GroupBySurname  -}}
+    {{- range $surname, $persons := $personsBySurname -}}
+    <h2>{{$surname}}</h2>
+    <ul>
+        {{- range $persons.Sort -}}
+        <li><a href="/{{.PagePath}}">{{.}}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+{{- end -}}
