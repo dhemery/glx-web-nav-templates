@@ -15,7 +15,7 @@
         {{- with .Events -}}
         <h3>Events</h3>
         <ul>
-            {{- range .Sort -}}
+            {{- range .ByDate -}}
             <li>
                 <a href="/{{.PagePath}}">{{.}}</a>
                 {{- if .Date.Valid }} {{.Date}}{{- end -}}
