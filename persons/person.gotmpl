@@ -7,7 +7,7 @@
         <h3>Assertions</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href="/{{.PagePath}}">{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -16,7 +16,11 @@
         <h3>Events</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li>
+                <a href="/{{.PagePath}}">{{.}}</a>
+                {{- if .Date.Valid }} {{.Date}}{{- end -}}
+                {{- with .Place -}}: <a href="/{{.PagePath}}">{{.}}</a>{{- end -}}
+            </li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -25,7 +29,7 @@
         <h3>Relationships</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href="/{{.PagePath}}">{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
