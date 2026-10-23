@@ -1,3 +1,5 @@
+data:
+    title: GLX Archive Web Navigator
 bases:
     root:
         patterns:
