@@ -1,94 +1,104 @@
 data:
     title: GLX Archive Web Navigator
-bases:
-    root:
-        patterns:
-            - base/root.gotmpl
-    list:
-        base: root
-        patterns:
-            - base/list.gotmpl
-    entity:
-        base: root
-        patterns:
-            - base/entity.gotmpl
-pages:
-    index:
-        base: root
-        patterns:
-            - index.gotmpl
-entities:
-    assertions:
+templates:
+    bases:
+        root:
+            files:
+                - base/root.gotmpl
+        list:
+            base: root
+            files:
+                - base/list.gotmpl
         entity:
-            base: entity
-            patterns:
-                - assertions/assertion.gotmpl
-        pages:
-            index:
-                base: list
-    citations:
-        entity:
-            base: entity
-            patterns:
-                - citations/citation.gotmpl
-        pages:
-            index:
-                base: list
-    events:
-        entity:
-            base: entity
-            patterns:
-                - events/event.gotmpl
-        pages:
-            index:
-                base: list
-    media:
-        entity:
-            base: entity
-            patterns:
-                - media/media.gotmpl
-        pages:
-            index:
-                base: list
-    persons:
-        entity:
-            base: entity
-            patterns:
-                - persons/person.gotmpl
-        pages:
-            index:
-                base: root
-                patterns:
-                    - persons/index.gotmpl
-    places:
-        entity:
-            base: entity
-            patterns:
-                - places/place.gotmpl
-        pages:
-            index:
-                base: list
-    relationships:
-        entity:
-            base: entity
-            patterns:
-                - relationships/relationship.gotmpl
-        pages:
-            index:
-                base: list
-    repositories:
-        entity:
-            base: entity
-            patterns:
-                - repositories/repository.gotmpl
-        pages:
-            index:
-                base: list
-    sources:
-        entity:
-            base: entity
-            patterns:
-                - sources/source.gotmpl
-        pages:
-            index:
-                base: list
+            base: root
+            files:
+                - base/entity.gotmpl
+    site:
+        index.html:
+            base: root
+            files:
+                - index.gotmpl
+    types:
+        assertions:
+            type:
+                assertions/index.html:
+                    base: list
+            entity:
+                assertions/<id>/index.html:
+                    base: entity
+                    files:
+                        - assertions/assertion.gotmpl
+        citations:
+            type:
+                citations/index.html:
+                    base: list
+            entity:
+                citations/<id>/index.html:
+                    base: entity
+                    files:
+                        - citations/citation.gotmpl
+        events:
+            type:
+                events/index.html:
+                    base: list
+            entity:
+                events/<id>/index.html:
+                    base: entity
+                    files:
+                        - events/event.gotmpl
+        media:
+            type:
+                media/index.html:
+                    base: list
+            entity:
+                media/<id>/index.html:
+                    base: entity
+                    files:
+                        - media/media.gotmpl
+        persons:
+            type:
+                persons/index.html:
+                    base: root
+                    files:
+                        - persons/index.gotmpl
+            entity:
+                persons/<id>/index.html:
+                    base: entity
+                    files:
+                        - persons/person.gotmpl
+        places:
+            type:
+                places/index.html:
+                    base: list
+            entity:
+                places/<id>/index.html:
+                    base: entity
+                    files:
+                        - places/place.gotmpl
+        relationships:
+            type:
+                relationships/index.html:
+                    base: list
+            entity:
+                relationships/<id>/index.html:
+                    base: entity
+                    files:
+                        - relationships/relationship.gotmpl
+        repositories:
+            type:
+                repositories/index.html:
+                    base: list
+            entity:
+                repositories/<id>/index.html:
+                    base: entity
+                    files:
+                        - repositories/repository.gotmpl
+        sources:
+            type:
+                sources/index.html:
+                    base: list
+            entity:
+                sources/<id>/index.html:
+                    base: entity
+                    files:
+                        - sources/source.gotmpl

@@ -39,7 +39,7 @@
         <h3>Citations</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href='{{template "entity-path" .}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -48,7 +48,7 @@
         <h3>Sources</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href='{{template "entity-path" .}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}

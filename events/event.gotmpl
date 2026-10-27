@@ -8,7 +8,7 @@
         {{- range .Participants -}}
         <tr>
             <th>{{.Role}}</th>
-            <td><a href='/{{.Person.PagePath}}'>{{.Person}}</a></td>
+            <td><a href='{{template "entity-path" .Person}}'>{{.Person}}</a></td>
         </tr>
         {{- end -}}
         <tr>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <th>Place</th>
-            <td>{{- with .Place -}}<a href='/{{.PagePath}}'>{{.FullName}}</a>{{- end -}}</td>
+            <td>{{- with .Place -}}<a href='{{template "entity-path" .}}'>{{.FullName}}</a>{{- end -}}</td>
         </tr>
     </table>
 
@@ -30,7 +30,7 @@
         <h3>Assertions</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href='{{template "entity-path" .}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}
@@ -39,7 +39,7 @@
         <h3>Relationships</h3>
         <ul>
             {{- range .Sort -}}
-            <li><a href='/{{.PagePath}}'>{{.}}</a></li>
+            <li><a href='{{template "entity-path" .}}'>{{.}}</a></li>
             {{- end -}}
         </ul>
         {{- end -}}

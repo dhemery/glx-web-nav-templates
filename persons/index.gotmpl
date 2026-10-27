@@ -6,7 +6,7 @@
     <h2>{{$surname}}</h2>
     <ul>
         {{- range $persons.Sort -}}
-        <li><a href="/{{.PagePath}}">{{.}}</a></li>
+        <li><a href="{{template "entity-path" .}}">{{.}}</a></li>
         {{- end -}}
     </ul>
     {{- end -}}
