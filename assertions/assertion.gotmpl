@@ -11,7 +11,7 @@
         {{- with .Property -}}
         <tr>
             <th>Property</th>
-            <td>{{.}}{{if $.Date.Valid}} ({{$.Date}}){{- end -}}</td>
+            <td>{{.}}{{if $.Date.String}} ({{$.Date}}){{- end -}}</td>
         </tr>
         {{- end -}}
 

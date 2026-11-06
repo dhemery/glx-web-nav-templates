@@ -1,7 +1,7 @@
 {{- define "title" -}}All Persons{{- end -}}
 
 {{- define "content" -}}
-    {{- $personsBySurname := .Entities.GroupBySurname  -}}
+    {{- $personsBySurname := .GroupBySurname  -}}
     {{- range $surname, $persons := $personsBySurname -}}
     <h2>{{$surname}}</h2>
     <ul>

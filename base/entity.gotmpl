@@ -12,7 +12,7 @@
             {{- $label := $prop.Definition.Label -}}
             {{- range $prop.Entries -}}
             <li>
-                <strong>{{$label}}{{if .Date.Valid}} ({{.Date}}){{end}}:</strong> {{.}}
+                <strong>{{$label}}{{if .Date.String}} ({{.Date}}){{end}}:</strong> {{.}}
                 {{- with .Fields -}}
                 <ul>
                     {{- range . -}}
